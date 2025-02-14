@@ -1,0 +1,34 @@
+<!-- <ol>
+    {% for equip in classificacio %}
+        <li>{{equip.equip}} ({{equip.punts}} punts) victories:{{equip.victories}}, derrotes:{{equip.derrotes}}, empats:{{equip.empats}}</li>
+    {% endfor %}
+</ol> -->
+
+<h1>{{lliga.nom}}</h1>
+
+<table border="1">
+    <tr>
+        <td><b>Nom equip</b></td>
+        <td><b>Punts</b></td>
+        <td><b>Victories</b></td>
+        <td><b>Derrotes</b></td>
+        <td><b>Empats<b></td>
+        <td><b>Gols a favor<b></td>
+        <td><b>Gols en contra<b></td>
+        <td><b>Gols average<b></td>
+    </tr>
+    {% for equip in classificacio %}
+    <tr>
+        <td>{{equip.equip}}</td>
+        <td>{{equip.punts}}</td>
+        <td>{{equip.victories}}</td>
+        <td>{{equip.derrotes}}</td>
+        <td>{{equip.empats}}</td>
+        <td>{{equip.gols_local_total}}</td>
+        <td>{{equip.gols_visitant_total}}</td>
+        <td>{{equip.gols_average}}</td>
+    </tr>    {% endfor %}
+</table>
+
+
+<!-- Gols a favor, gols en contra, gols average (g_favor/g_contra)-->
