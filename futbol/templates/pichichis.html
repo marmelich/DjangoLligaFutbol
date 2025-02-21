@@ -1,0 +1,27 @@
+<h1>Pichichis</h1>
+<p>Selecciona lliga:</p>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Veure classificació</button>
+</form>
+
+{% if lliga %}  <!-- Solo mostrar la tabla si hay una liga seleccionada -->
+<h1>{{ lliga.nom }}</h1>
+
+<table border="1">
+    <tr>
+        <td><b>Nom jugador</b></td>
+        <td><b>Equip</b></td>
+        <td><b>Gols</b></td>
+    </tr>
+    {% for jugador in jugadors %}
+    <tr>
+        <td>{{ jugador.nom }}</td>
+        <td>{{ jugador.equip }}</td>
+        <td>{{ jugador.gols }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}

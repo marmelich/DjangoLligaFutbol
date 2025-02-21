@@ -7,6 +7,9 @@ admin.site.register(Lliga)
 admin.site.register(Equip)
 admin.site.register(Jugador)
 
+# class JugadorAdmin(admin.ModelAdmin):
+#     search_fields = ("nom",)
+#     admin.site.register(Jugador.JugadorAdmin)
 
 class EventInline(admin.TabularInline): #esto hace que dentro de 1 partido puedas añadir los eventos
     model = Event

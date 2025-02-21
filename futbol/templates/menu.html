@@ -1,0 +1,9 @@
+<h1>Lliga de fubol</h1>
+<p>Selecciona lliga:</p>
+
+<form method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+ 
+	<input type="submit" name="submit">
+</form>

@@ -1,0 +1,48 @@
+<style>
+    table {
+        border-collapse: collapse;
+        margin: 20px;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    form {
+        margin: 20px;
+    }
+
+    .submit-button {
+        margin-left: 10px;
+    }
+</style>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.lliga }}
+    <input type="submit" value="Ver resultados" class="submit-button">
+</form>
+
+{% if resultats %}
+<h2>Resultados de {{ lliga_seleccionada }}</h2>
+<table>
+    {% for row in resultats %}
+    <tr>
+        {% for cell in row %}
+        {% if forloop.first or forloop.parentloop.first %}
+        <th>{{ cell }}</th>
+        {% else %}
+        <td>{{ cell }}</td>
+        {% endif %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
